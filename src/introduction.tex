@@ -1,0 +1,15 @@
+Using a team of robots to explore and build the map of an unknown environment is the basic task of many multi-robot applications, such as self-driving cars, home service robots, and multi-robot rescue.
+In terms of perception, the robots in this team need to do Distributed Simultaneous Localization and Mapping (DSLAM) to share their understanding of the environment, build a global map together, and provide the location of each robot in this map.
+In terms of decision, the robots need to direct themself to explore unknown space, thus expanding the known and explored area of a map which is updated while doing the DSLAM.
+
+It is a common practice to use external positioning signals (e.g. GPS, motion capture) to provide the location of the robots. 
+Yet in communication constrained environments, such as cave exploration and building inspection, the external positioning signals will be shielded. 
+Some previous works implement DSLAM systems \cite{cieslewski2018data,lajoie2020door} to provide the location in these nonideal environments. 
+The basic idea of these DSLAM is similar: 1) adopting single-robot SLAM system to provide intra-robot location, 2) sharing \& matching place recognition infomation to detect the inter-robot loop closures, 3) transmitting the sensor data related to the recognized same place to calculate relative poses and 4) merging \& optimizing the single-robot SLAM results according to the relative poses. 
+These systems use camera image to extract a sophisticated feature vector to encode the place information. 
+% Computing the distance between feature vectors can know if robots experience the same place. 
+These feature vectors can be generated form the handcrafted method \cite{jegou2014triang} or emerging neural-network-based method \cite{radenovic2018fine, arandjelovic2016netvlad}. 
+These image-based  method is communication-costing to share the feature vectors. 
+Besides sharing place information, the sensor data, which is also cemera image and communication-costing, need to be transmitted between robots to get the relative pose.
+
+Frontier based exploration strategies are usually used for robotic exploration for both single-robot  and multi-robot exploration \cite{senarathne2013efficient, umari2017autonomous, orvsulic2019efficient}. 
