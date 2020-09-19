@@ -1,0 +1,17 @@
+\label{sec:relatedwork}
+
+\subsection{Inter-robot Loop Closure Detection}
+Inter-robot loop closure detection, or place recognition, aligns the trajectories of different robots, based on the sensor frames in the same place. 
+It is a common way to generate and compare descriptors to find out the potential loop closure.
+For vision-based loop closure detection, there are works to extract feature from input image, such as ORB feature\cite{Mur-Artal:2017281} and SIFT feature \cite{lowe2004distinctive} and use some aggregation method to compact the feature into vectors, such as Bag-of-Word \cite{jegou2011aggregating} and VLAD \cite{tolias2013aggregate}.
+Recently, convolutional neural networks (CNN) improve the perfomance of visual place recognition in accuracy and robustnesss, sucn as NetVLAD \cite{arandjelovic2016netvlad} and GeM \cite{radenovic2018fine}.
+Different from the rich feature of images, laser scan, especially 2D laser scan, is lack of information. Above image-based algorithms cannot directly applied to the laser sensors, even on the  2D map constructed from laser.
+\cite{ribenren1} and \cite{ribenren2} design feature extract method for 2D map. 
+However, these method are designed for map registration, yet not applicable for place recognition since the feature is not discriminative.
+Recently, some works use neural networks to process laser scan or point cloud, such as PointNet \cite{qi2017pointnet} and PointNetVLAD \cite{angelina2018pointnetvlad}. However, these methods are designed for 3D point clouds and are not suitable for 2D scenes that lack information.
+It is still a challenging task to do the place recognition on 2D data, such as 2D scan and 2D map.
+
+\subsection{RelPose Estimation}
+Map registration, which is used to calculate the transform (translation and rotation) between two maps belonging to the same place, is the key component of RelPose estimation.
+
+\subsection{Space Exploration Strategy}

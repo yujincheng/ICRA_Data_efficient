@@ -4,6 +4,6 @@ Various Distributed Simultaneous Localization and Mapping (DSLAM) systems offer 
 However, current DSLAM systems rely on the high-precision inter-robot place recognition method. It is communication-costing to share the sophisticated feature for inter-robot place recognition and the sensor data for inter-robot relative pose estimation.
 In the multi-robot exploration system, each robot's map has already been shared to build a global map.
 Thus we use the grid map, instead of the feature and the sensor data, to do inter-robot place recognition and relative pose estimation to reduce data transmission.
-Current DSLAM systems are also vulnerable to mistaken place recognition. Thus the robot trajectories need to overlay each other in an area to use the temporal information to improve the accuracy of place recognition.
+Current DSLAM systems are also vulnerable to mistaken place recognition. Thus the robot trajectories need to overlay each other in an area to use the temporal or geometric information to improve the accuracy of place recognition.
 However, current multi-robot exploration strategies are usually not stable, which means a big difference between different robots' exploration trajectories for the same space, resulting in a small overlay area.
 In this paper, we propose a stable multi-robot exploration method that ensures the consistency of the trajectories when different robots exploring the same area and thus improves the accuracy of place recognition.

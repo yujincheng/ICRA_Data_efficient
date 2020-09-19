@@ -1,0 +1,10 @@
+\label{sec:dslam}
+As illustraded in \Cref{fig:sysframe} there are tow main inter-robot components in DSLAM system: 1) place recognition and matching. 2) inter-robot relative pose (RelPose) estimation. In this section we implement these components both based on submaps.
+
+\subsection{Submap-Based Place Recognition}
+The key problem of place recognition is to extrct discriminative feature vector from 2D submap.
+
+\subsection{Submap-Based RelPose Estimation}
+% Because submap contains the position of the map at the single-robot trajectory, the RelPose of two robots can be estimated by calculating the pose of two submaps in the same scene, which is well defined as map registration.
+
+We extract image-based feature from submap and perform coarse registration. After that, we convert the submap to the point cloud and refine the registration result.

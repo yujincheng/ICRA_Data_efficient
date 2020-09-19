@@ -24,11 +24,12 @@
 
 % The following packages can be found on http:\\www.ctan.org
 %\usepackage{graphics} % for pdf, bitmapped graphics files
-%\usepackage{epsfig} % for postscript graphics files
+\usepackage{epsfig} % for postscript graphics files
 %\usepackage{mathptmx} % assumes new font selection scheme installed
 %\usepackage{times} % assumes new font selection scheme installed
 %\usepackage{amsmath} % assumes amsmath package installed
 %\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{cleveref}
 
 \title{\LARGE \bf
 All We Share is Grid Map: Data-efficient Multi-Robot Exploration System Based Stable Exploring Path
@@ -65,6 +66,20 @@ All We Share is Grid Map: Data-efficient Multi-Robot Exploration System Based St
 \section{INTRODUCTION}
 \input{src/introduction.tex}
 
+\section{RELATED WORKS}
+\input{src/relatedwork.tex}
+
+\section{SUBMAP-BASED DSLAM}
+\input{src/dslam.tex}
+
+\section{STABLE EXPLORATION}
+\input{src/exploration.tex}
+
+\section{EXPERIMENT RESULT}
+\input{src/experiment.tex}
+
+\section{CONCLUSION}
+\input{src/conclusion.tex}
 
 \bibliographystyle{IEEEtran}
 \bibliography{src/fpgaslam}
