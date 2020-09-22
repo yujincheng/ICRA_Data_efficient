@@ -12,14 +12,15 @@ Recently, some works use neural networks to process laser scan or point cloud, s
 It is still a challenging task to do the place recognition on 2D data, such as 2D scan and 2D map.
 
 \subsection{RelPose Estimation}
-Map registration, which is used to calculate the transform (translation and rotation) between two maps belonging to the same place, is the key component of RelPose estimation.
-Traditional map registration methods, such as ICP \cite{icp} and NDT \cite{ndt}, use 3D or 2D point clouds as the input and the result of the odometer as the initial transform.
-They measure the distance $d$ between the two point clouds $Q_1$ and $Q_2$, adjust the transform to minimize the distance, and then repeat the process until the transform converges.
-These methods require a relatively accurate initial transform, otherwise it is easy to converge to a local optimal solution.
-For the Single-Robot SLAM, the initial transform can be obtained by the odometer.
-But for DSLAM, it is not possible to get the initial transform between different robots.
-The mapstitch package \cite{mapstitch} and the map\_merger package \cite{map-merger} use a new map registration method, calculating the transform by the occupancy grids.
-They treat the occupancy map as an image, extract and match feature points in different images, and calculate the transform based on the matching result.
-This method does not require initial transform and is suitable for DSLAM, but the registration accuracy is lower than traditional methods.
+Map registration, which is used to calculate the transformation (translation and rotation) between two maps belonging to the same place, is the key component of RelPose estimation.
+Traditional map registration methods, such as ICP \cite{Besl1992A} and NDT \cite{ndt}, use 3D or 2D point clouds as the input and the result of the odometer as the initial transformation.
+They measure the distance $d$ between the two point clouds $Q_1$ and $Q_2$, adjust the transformation to minimize the distance, and then repeat the process until the transformation converges.
+These methods require a relatively accurate initial transformation, otherwise it is easy to converge to a local optimal solution.
+For the Single-Robot SLAM, the initial transformation can be obtained by the odometer.
+But for DSLAM, it is not possible to get the initial transformation between different robots.
+The map\_merger package \cite{Andre2015Coordinated} and the multirobot\_map\_merge package \cite{Horner2016} use a new map registration method, calculating the transformation by the occupancy grids.
+They treat the occupancy grid map as an image, extract and match feature points in different images, and calculate the transformation based on the matching result.
+This method does not require initial transformation and is suitable for DSLAM, but the registration accuracy is lower than traditional methods.
+\cite{blanco2013robust} firstly registers the occupancy grids to obtain a potential transformation, which is then refined employing the point clouds and ICP-based alignment.
 
 \subsection{Space Exploration Strategy}
