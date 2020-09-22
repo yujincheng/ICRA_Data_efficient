@@ -9,12 +9,14 @@ The key problem of place recognition is to extrct discriminative feature vector 
 
 \begin{figure}[t]
     \includegraphics[width=0.99\linewidth]{fig/registration.pdf}
-    \caption{An overview of the proposed method for relative pose estimation and map merging.}
+    \caption{An overview of the proposed method for relative pose estimation and map merging. 
+    We extract image-based features from submap and perform coarse registration. 
+    After that, we convert the submap to the point cloud and use ICP-based method to refine the registration result.}
     \label{fig:registration}
 \end{figure}
 
 We extract image-based features from submap and perform coarse registration. 
-After that, we convert the submap to the point cloud and refine the registration result.
+After that, we convert the submap to the point cloud and use ICP-based method to refine the registration result.
 Firstly, we extract image-based features like AKAZE, ORB, SURF, etc.
 We use the features matcher which finds two best matches for each feature and leaves the best one only if the ratio between descriptor distances is greater than the threshold.
 And we check the geometric consistency of the matching results and delete incorrect matches.
